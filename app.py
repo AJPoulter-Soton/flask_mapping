@@ -28,19 +28,7 @@ def main():
     points.append([51.0555, -1.3111])
     points.append([51.0987, -1.3064])
 
-    # Now calculate the mean centre point of all of these (good enough for a demo!)
-    # Note that things get a bit screwy if distances are LARGE...
-    lt=0
-    ln=0
-    
-    for point in points:
-        lt+=point[0]
-        ln+=point[1]
-    
-    lt/=len(points)
-    ln/=len(points)
-
-    # Lastly before we plot stuff – we need to get the diameter of a bounding circle...  
+    # Lastly before we plot stuff – we need to get the centre & diameter of a bounding circle...  
     # To approximate that – here we'll get the "great circle" distance between the NE & SW corners...
     maxlt = max(points, key=lambda x: x[0])[0]
     maxln = max(points, key=lambda x: x[1])[1]
